@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  /*padding: 330px;*/
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=checkbox], input[type=textarea],input[type=select] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=textarea]:focus,input[type=select]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #1c87c9;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="http://127.0.0.1:5000/register">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Register your complaint by filling below form.</p>
+    <hr>
+
+    <label for="application_name"><b>Application Name</b></label>
+    <input type="text" placeholder="Application Name(Internal Apps)" name="application_name" id="email" required>
+
+    <label for="psw"><b>Software List</b></label>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Jenkins
+      <label class="switch ">
+      <input type="checkbox" name="A" class="danger">
+      <span class="slider round"></span>
+      </label>
+      </li>
+      <li class="list-group-item">GitHub
+      <label class="switch ">
+      <input type="checkbox" name="B" class="danger">
+      <span class="slider round"></span>
+      </label>
+      </li>
+      <li class="list-group-item">Maven
+      <label class="switch ">
+      <input type="checkbox" name="C" class="danger">
+      <span class="slider round"></span>
+      </label>
+      </li>
+      <li class="list-group-item">Apache Tomcat
+        <label class="switch ">
+        <input type="checkbox" name="C" class="danger">
+        <span class="slider round"></span>
+        </label>
+        </li>
+        <li class="list-group-item">Docker
+          <label class="switch ">
+          <input type="checkbox" name="C" class="danger">
+          <span class="slider round"></span>
+          </label>
+          </li>
+          <li class="list-group-item">Ansible
+            <label class="switch ">
+            <input type="checkbox" name="C" class="danger">
+            <span class="slider round"></span>
+            </label>
+            </li>
+      </ul>
+      <label for="os"><b>OS Details with Version</b></label>
+      <select name="osdetails" id="osdetails">
+        <optgroup label="Linux">
+          <option value="RHEL6">RHEL6.7</option>
+          <option value="RHEL7">RHEL7.7</option>
+          <option value="ubuntu18">ubuntu18</option>
+          <option value="ubuntu19">ubuntu19</option>
+        </optgroup>
+        <optgroup label="Windows">
+          <option value="windows2003">Windows 2003</option>
+          <option value="windows2012">Windows 2012</option>
+          <option value="windows2018">Windows 2018</option>
+        </optgroup>
+      </select>
+    <!-- <input type="text" placeholder="OS Details" name="osdetails" id="osdetails" required> -->
+<br><br><br><br>
+    <label for="psw-repeat"><b>RAM Memory, CPU</b></label>
+    <table>
+      <tr><td>
+        <label for="cars">RAM Memory</label>
+        <select name="ram" id="ram">
+          <option value="512mb">512MB</option>
+          <option value="1gb">1GB</option>
+          <option value="2gb">2GB</option>
+          <option value="4gb">4GB</option>
+        </select>
+        <label for="cars">CPU</label>
+        <select name="cpu" id="cpu">
+          <!---m stands for Milicon-->
+          <option value="1000m">1000m</option>
+          <option value="1500m">1500m</option>
+          <option value="2000m">2000m</option>
+          <option value="2500m">2500m</option>
+          <option value="3000m">3000m</option>
+        </select>
+      </td></tr>
+    </table>
+
+    <hr>
+    <label for="isdevices"><b>If you are connecting any device, if yes provide details below:</b></label>
+    <textarea rows="5" cols="80">Details goes here</textarea>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+<!--   
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div> -->
+</form>
+
+</body>
+</html>
